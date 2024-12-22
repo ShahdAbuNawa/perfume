@@ -1,0 +1,656 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Color Palette */
+:root {
+    --color-background: #F6F5F2;
+    --color-light-pink: #F0EBE3;
+    --color-medium-pink: #F3CDD0;
+    --color-dark-pink: #FFEFEF;
+    --color-text-dark: #3C3D37;
+    --color-text-light: #ecf0f1;
+    --color-border: #bdc3c7;
+    --color-hover: #e2b5bd;
+}
+
+/* General Styles */
+body {
+    background-image: url("/images/iman.jpeg");
+
+    font-family: 'Open Sans', sans-serif;
+    /* Updated font */
+    margin: 0;
+    padding: 0;
+    /* background-color: var(--color-medium-pink); */
+    /* Updated background color */
+}
+
+/* Container */
+.container {
+    background-color: var(--color-medium-pink);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Changed from space-between to flex-start */
+    padding: 0 20px;
+    /* Added padding for better spacing */
+}
+
+/* Misty Logo Styling */
+.header-logo {
+    width: 60px;
+    /* Adjust the size as needed */
+    height: auto;
+    margin-right: 10px;
+    /* Reduced margin to bring logo closer to "Misty" */
+}
+
+/* Header */
+header {
+    background-color: var(--color-medium-pink);
+    /* Updated header background */
+    color: var(--color-text-light);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Added subtle shadow */
+}
+
+/* Header Content */
+header .container {
+    /* Already defined above with flex properties */
+}
+
+/* Header Title */
+header h1 {
+    margin: 0;
+    color: var(--color-text-dark);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+
+    /* Adjusted for closer spacing with logo */
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    /* Align items to the right */
+    align-items: center;
+    gap: 20px;
+    /* Space between menu items */
+    position: absolute;
+    /* Allow positioning */
+    right: 20px;
+    /* Distance from the right edge */
+    top: 50%;
+    /* Center vertically within the header */
+    transform: translateY(-50%);
+    /* Adjust for perfect vertical centering */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 18px;
+    padding: 10px 15px;
+    /* Padding for click area */
+}
+
+nav ul li a:hover {
+    color: var(--color-dark-pink);
+}
+
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--color-text-light);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* nav ul li a:hover::after {
+    width: 100%;
+} */
+
+nav ul li a:hover {
+    color: var(--color-dark-pink);
+    /* Removed border-bottom to use pseudo-element */
+}
+
+/* Clearfix - Removed as flexbox handles alignment */
+
+/* Main Content */
+main {
+    padding-top: 100px;
+    /* Adjusted for fixed header */
+}
+
+/* Our Section */
+.our {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+/* Featured Perfumes */
+#featured {
+    background: transparent;
+    /* background-color: var(--color-light-pink); */
+    padding: 50px 0;
+    text-align: center;
+}
+
+#featured h2 {
+    color: var(--color-text-dark);
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+/* Perfume Grid */
+.perfume-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.perfume-item {
+    background-color: white;
+    border: 1px solid var(--color-border);
+    margin: 15px;
+    padding: 15px;
+    width: calc(25% - 60px);
+    /* For 4 items per row */
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+}
+
+.perfume-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(242, 190, 209, 0.2);
+    /* Adjusted shadow color */
+}
+
+.perfume-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.perfume-item h3 {
+    color: var(--color-text-dark);
+    margin: 10px 0 5px 0;
+    font-size: 18px;
+}
+
+.perfume-item p {
+    color: var(--color-text-dark);
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    background-color: var(--color-dark-pink);
+    /* Updated button color */
+    color: var(--color-text-dark);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: var(--color-medium-pink);
+    /* Hover color */
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-medium-pink);
+    /* Updated footer background */
+    color: var(--color-text-dark);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.con {
+    color: var(--color-text-dark);
+    font-weight: bold;
+}
+
+.social-media {
+    margin-top: 20px;
+    color: var(--color-text-dark);
+}
+
+.social-media a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: var(--color-text-dark);
+    transition: color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', sans-serif;
+    /* Additional styling */
+}
+
+.social-media a:hover {
+    color: var(--color-dark-pink);
+}
+
+/* Buttons */
+button {
+    background-color: var(--color-dark-pink);
+    color: var(--color-text-dark);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button.add-to-cart {
+    background-color: var(--color-text-light);
+    color: var(--color-text-dark);
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button.add-to-cart:hover {
+    background-color: var(--color-hover);
+    /* Hover color */
+}
+
+button:focus,
+.add-to-cart:focus {
+    outline: none;
+}
+
+/* Links */
+a {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-dark-pink);
+}
+
+/* Search Bar */
+#search {
+    /* background-image: url("/images/iman.jpeg"); */
+    /* background-color: var(--color-medium-pink); */
+    background: transparent;
+    background-size: cover;
+    /* Ensures the image covers the entire section */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    background-position: center;
+    /* Centers the image */
+    padding: 30px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* Changed from 'right' to 'center' */
+    gap: 20px;
+    min-height: 10px;
+    /* Ensures the background is visible */
+}
+
+#search-bar {
+    width: 15%;
+    /* Reduced width from 20% to 15% */
+    margin-left: auto;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--color-light-pink);
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+#search-bar:focus {
+    border-color: var(--color-dark-pink);
+    outline: none;
+}
+
+/* About Us Section */
+#about-us {
+    background-color: var(--color-medium-pink);
+    padding: 50px 20px;
+    text-align: left;
+}
+
+/* Contact Form */
+#contact-form {
+    background-color: var(--color-light-pink);
+    padding: 50px 20px;
+}
+
+#contact-form h2 {
+    text-align: center;
+    color: var(--color-text-dark);
+    margin-bottom: 30px;
+}
+
+#contactForm {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contactForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-text-dark);
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: var(--color-dark-pink);
+    outline: none;
+}
+
+#contactForm button {
+    width: 100%;
+    background-color: var(--color-dark-pink);
+    color: var(--color-text-dark);
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contactForm button:hover {
+    background-color: var(--color-medium-pink);
+}
+
+#contactForm button:focus {
+    outline: none;
+}
+
+/* Footer Links */
+footer p,
+footer a {
+    color: var(--color-text-light);
+}
+
+/* Responsive Design */
+
+/* For screen sizes less than or equal to 992px */
+@media (max-width: 992px) {
+    nav {
+        float: none;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    header h1 {
+        margin-left: 0;
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .perfume-item {
+        width: calc(33.33% - 60px);
+        /* For 3 items per row */
+    }
+
+    /* Adjust header-right padding on smaller screens */
+    .header-right .container {
+        padding-left: 50px;
+        /* Adjust as needed */
+    }
+}
+
+/* For screen sizes less than or equal to 768px */
+@media (max-width: 768px) {
+    #search-bar {
+        width: 60%;
+        /* Further reduced width on small screens */
+    }
+
+    .perfume-item {
+        width: calc(50% - 60px);
+        /* For 2 items per row */
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        margin-left: 10px;
+    }
+
+    nav {
+        margin-right: 10px;
+    }
+}
+
+/* For screen sizes less than or equal to 480px */
+@media (max-width: 480px) {
+    .perfume-item {
+        width: 100%;
+        /* Full width */
+    }
+
+    /* Adjust footer padding on small screens */
+    footer {
+        padding: 20px 0;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .header-logo {
+        width: 40px;
+    }
+}
+
+/* Adjustments */
+
+/* Hover effect for navigation links */
+nav ul li a:hover {
+    color: var(--color-dark-pink);
+}
+
+/* Adjust the spacing in perfume-item */
+.perfume-item h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.perfume-item p {
+    margin: 5px 0;
+}
+
+/* Customize scroll bar (optional) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #7f8c8d;
+}
+
+/* Form Input Styling */
+#contactForm input,
+#contactForm textarea {
+    font-size: 16px;
+}
+
+/* Footer Social Media Icons */
+.social-media img {
+    filter: brightness(0) invert(1);
+    /* Make icons white */
+}
+
+.social-media img:hover {
+    filter: brightness(0.8);
+}
+
+/* Additional Button Styles */
+button:active,
+.add-to-cart:active {
+    transform: scale(0.98);
+}
+
+/* Search Bar Placeholder Text Color */
+#search-bar::placeholder {
+    color: var(--color-border);
+}
+
+/* Custom Modal Styles */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black with opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--color-light-pink);
+    padding: 20px 30px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+    color: var(--color-text-dark);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background-color: var(--color-dark-pink);
+    color: var(--color-text-dark);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: var(--color-medium-pink);
+}
+
+.perfume-item .price {
+    font-weight: bold;
+}
+
+.perfume-item .description {
+    font-style: italic;
+    font-family: 'Cursive', sans-serif;
+}
